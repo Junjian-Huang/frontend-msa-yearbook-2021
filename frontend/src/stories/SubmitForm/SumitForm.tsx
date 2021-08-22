@@ -29,13 +29,13 @@ const SubmitForm = () =>{
 
     const nameControl = <FormControl>
     <InputLabel htmlFor="my-input">Project Name</InputLabel>
-    <Input id="project-input" aria-describeby="The project name" onChange={handNameUpdate}/>
+    <Input id="project-input" aria-describedby="The project name" onChange={handNameUpdate}/>
     <FormHelperText id="The project name">The Github project name</FormHelperText>
     </FormControl>
 
     const urlControl = <FormControl>
     <InputLabel htmlFor="my-input">GitHub Url</InputLabel>
-    <Input id="url-input" aria-describeby="The GitHub Url" onChange={handUrlUpdate}/>
+    <Input id="url-input" aria-describedby="The GitHub Url" onChange={handUrlUpdate}/>
     <FormHelperText id="The project name">The Github project Url</FormHelperText>
     </FormControl>
 
