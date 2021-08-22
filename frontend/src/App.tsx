@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.css';
-import SubmitForm from './SumitForm';
+import MSAHeader from './stories/MSAHeader/MSAHeader';
+import SubmitForm from './stories/SubmitForm/SumitForm';
 
 function App() {
-  return <SubmitForm />
+  return <div>
+    <MSAHeader />
+    <SubmitForm />
+    </div>
 }
 
 export default App;
