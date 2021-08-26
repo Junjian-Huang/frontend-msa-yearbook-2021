@@ -1,21 +1,30 @@
-import React from "react";
-import {AppBar, Button, createStyles, IconButton, makeStyles, Toolbar, Typography} from '@material-ui/core';
+import React, { useState } from "react";
+import {AppBar, Button, createStyles, Drawer, IconButton, makeStyles, Theme, Toolbar, Typography} from '@material-ui/core';
 import { Dehaze } from "@material-ui/icons";
+import { Sidebar } from "../Sidebar/Sidebar";
 
-const useStyles = makeStyles(createStyles({
+const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
-        width: '100%'
+      flexGrow: 1,
     },
     menuButton: {
-
+      marginRight: theme.spacing(2),
     },
     title: {
-
+      flexGrow: 1,
     }
 }));
 
+
 export default function MSAHeader() {
+  
+  const [sideBar, setSideBar] = useState(false);
+
     const classes = useStyles();
+
+    const toggleSideBar = () => {
+      setSideBar(!sideBar);
+    };
   
     return (
       <div className={classes.root}>
@@ -26,8 +35,12 @@ export default function MSAHeader() {
               edge="start"
               color="inherit"
               aria-label="menu"
+              onClick={toggleSideBar}
             >
-              <Dehaze />
+                <Drawer anchor="left" open={sideBar} onClose={toggleSideBar}>
+                <Sidebar />
+                </Drawer>
+            <Dehaze />
             </IconButton>
             <Typography className={classes.title} variant="h6">
               My super cool web app
