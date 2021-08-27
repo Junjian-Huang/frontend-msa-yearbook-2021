@@ -32,13 +32,13 @@ export const Sidebar = () => {
   return (
     <div className={classes.list}>
       <List>
-        <ListItem button>
+        <ListItem button href="/home" component={Link}>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText className={classes.listText} primary="Home" />
         </ListItem>
-        <ListItem button>
+        <ListItem button href="/submit" component={Link}>
           <ListItemIcon>
             <ArrowUpwardIcon />
           </ListItemIcon>
